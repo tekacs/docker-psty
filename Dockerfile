@@ -10,7 +10,7 @@ RUN echo 'root:linux' | chpasswd
 USER data
 
 WORKDIR /home
-ADD http://pigshell.com/v/0.6.2/psty.py psty.py
+ADD http://pigshell.com/v/0.6.2/psty.py /home/psty.py
 
 EXPOSE 50937
 
