@@ -10,8 +10,8 @@ RUN echo 'root:linux' | chpasswd
 USER data
 
 WORKDIR /home
-ADD http://pigshell.com/v/0.6.2/psty.py /home/psty.py
+ADD http://pigshell.com/v/0.6.2/psty.py /psty.py
 
 EXPOSE 50937
 
-ENTRYPOINT ["python2.7", "/home/psty.py", "-a", "-d", "/home"]
+ENTRYPOINT ["python2.7", "/psty.py", "-a", "-d", "/home"]
