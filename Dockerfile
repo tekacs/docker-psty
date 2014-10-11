@@ -7,11 +7,12 @@ VOLUME /home
 
 RUN useradd -mG sudo -d /home data
 RUN echo 'root:linux' | chpasswd
+
+WORKDIR /
+ADD http://pigshell.com/v/0.6.2/psty.py psty.py
+RUN chmod 755 psty.py
+
 USER data
-
-WORKDIR /home
-ADD http://pigshell.com/v/0.6.2/psty.py /psty.py
-
 EXPOSE 50937
 
 ENTRYPOINT ["python2.7", "/psty.py", "-a", "-d", "/home"]
